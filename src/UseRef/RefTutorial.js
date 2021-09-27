@@ -1,11 +1,12 @@
 import React, { useRef } from "react";
 
-function RefTutorial() {
+export const RefTutorial = () => {
   const inputRef = useRef(null);
 
   const onClick = () => {
     inputRef.current.value = "";
   };
+  
   return (
     <div>
       <h1>Pedro</h1>
@@ -15,4 +16,19 @@ function RefTutorial() {
   );
 }
 
-export default RefTutorial;
+export const RUseRef = () => {
+
+  const inputRef = useRef(null);
+  const onClick = () => {
+    inputRef.current.value = "";
+  }
+
+  return(
+    <div>
+      <h1>Pedro</h1>
+      <input type="text" placeholder="Ex..." ref={inputRef} />
+      <button onClick={onClick}>Change Me</button>
+    </div>
+  )
+
+}
