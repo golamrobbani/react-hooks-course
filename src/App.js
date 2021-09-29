@@ -9,21 +9,30 @@ import MemoTutorial from "./UseMemo/MemoTutorial";
 import CallBackTutorial from "./UseCallback/CallbackTutorial";
 import RUseState from "./RUseState";
 
+//higher order component
+// import ClickCounter from './HigerOrderComponent/ClickCounter';
+// import HoverCounter from './HigerOrderComponent/HoverCounter';
+// import ClickCounter2 from './HigerOrderComponent/ClickCounter2';
+// import HoverCounter2 from "./HigerOrderComponent/HoverCounter2";
 
-import ClickCounter from './components/ClickCounter';
-import HoverCounter from './components/HoverCounter';
-import ClickCounter2 from './components/ClickCounter2';
-import HoverCounter2 from "./components/HoverCounter2";
-
+//render props
+import Counter from "./RenderProps/Counter";
+import ClickCounter from "./RenderProps/ClickCounter";
+import HoverCounter from "./RenderProps/HoverCounter";
 
 function App() {
   return (
     <div className="App">
-      <ClickCounter />
-      <HoverCounter />
 
-      <ClickCounter2/>
-      <HoverCounter2/>
+      <Counter render={(count,incrementCount)=>
+        <ClickCounter count={count} incrementCount={incrementCount}/>
+      }/>
+
+      <Counter render={(count,incrementCount)=>
+        <HoverCounter count={count} incrementCount={incrementCount}/>
+      }/>
+
+
     </div>
   );
 }
